@@ -2,12 +2,14 @@
   "name": "universal_with_heuristics",
   "version": "1.0.0",
   "description": "Trabalho da Disciplina de Teoria da Computação realizado pelos alunos Rafael Porto Vieira de Moura e Liliana Sabata Teodoro.",
-  "main": "src/index.ts",
-  "scripts": {    
-    "dev": "ts-node-dev src/index.ts",
+  "main": "./build/index.js",
+  "scripts": {
+    "dev": "yarn run build && node ./build/index.js",
+    "build": "tsc --build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lilianasabato/universal_with_heuristics.git"
@@ -19,17 +21,19 @@
   },
   "homepage": "https://github.com/lilianasabato/universal_with_heuristics#readme",
   "dependencies": {
-    "node-fetch": "^3.0.0",
     "faker": "^5.5.3",
     "lodash": "^4.17.21",
+    "node-fetch": "^3.0.0",
+    "ora": "^6.0.1",
     "tslib": "^2.3.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@types/node-fetch": "^3.0.3",
-    "@types/node": "^16.11.11",
     "@types/faker": "^5.5.9",
     "@types/lodash": "^4.14.177",
+    "@types/node": "^16.11.11",
+    "@types/node-fetch": "^3.0.3",
+    "@types/ora": "^3.2.0",
     "@types/uuid": "^8.3.0",
     "eslint": "^8.3.0",
     "nodemon": "^2.0.15",
